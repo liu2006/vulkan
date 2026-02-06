@@ -64,10 +64,12 @@ CMAKE_BINARY_DIR = /home/liu/Programming/vulkan/build
 
 # The main recursive "all" target.
 all: CMakeFiles/vulkan.dir/all
+all: CMakeFiles/lib.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/vulkan.dir/codegen
+codegen: CMakeFiles/lib.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -76,21 +78,22 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/vulkan.dir/clean
+clean: CMakeFiles/lib.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/vulkan.dir
 
 # All Build rule for target.
-CMakeFiles/vulkan.dir/all:
+CMakeFiles/vulkan.dir/all: CMakeFiles/lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vulkan.dir/build.make CMakeFiles/vulkan.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vulkan.dir/build.make CMakeFiles/vulkan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/liu/Programming/vulkan/build/CMakeFiles --progress-num=1,2 "Built target vulkan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/liu/Programming/vulkan/build/CMakeFiles --progress-num=3,4 "Built target vulkan"
 .PHONY : CMakeFiles/vulkan.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/vulkan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liu/Programming/vulkan/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liu/Programming/vulkan/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/vulkan.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/liu/Programming/vulkan/build/CMakeFiles 0
 .PHONY : CMakeFiles/vulkan.dir/rule
@@ -102,13 +105,45 @@ vulkan: CMakeFiles/vulkan.dir/rule
 # codegen rule for target.
 CMakeFiles/vulkan.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vulkan.dir/build.make CMakeFiles/vulkan.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/liu/Programming/vulkan/build/CMakeFiles --progress-num=1,2 "Finished codegen for target vulkan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/liu/Programming/vulkan/build/CMakeFiles --progress-num=3,4 "Finished codegen for target vulkan"
 .PHONY : CMakeFiles/vulkan.dir/codegen
 
 # clean rule for target.
 CMakeFiles/vulkan.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vulkan.dir/build.make CMakeFiles/vulkan.dir/clean
 .PHONY : CMakeFiles/vulkan.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/lib.dir
+
+# All Build rule for target.
+CMakeFiles/lib.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/liu/Programming/vulkan/build/CMakeFiles --progress-num=1,2 "Built target lib"
+.PHONY : CMakeFiles/lib.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/lib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liu/Programming/vulkan/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liu/Programming/vulkan/build/CMakeFiles 0
+.PHONY : CMakeFiles/lib.dir/rule
+
+# Convenience name for target.
+lib: CMakeFiles/lib.dir/rule
+.PHONY : lib
+
+# codegen rule for target.
+CMakeFiles/lib.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/liu/Programming/vulkan/build/CMakeFiles --progress-num=1,2 "Finished codegen for target lib"
+.PHONY : CMakeFiles/lib.dir/codegen
+
+# clean rule for target.
+CMakeFiles/lib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/clean
+.PHONY : CMakeFiles/lib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

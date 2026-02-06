@@ -3,6 +3,9 @@ vulkan: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/vulkan.dir/src/main.cpp.o \
+  liblib.a \
+  /home/liu/vendored/sdl3/lib/libSDL3.so.0.4.0 \
+  /home/liu/vendored/1.4.341.0/x86_64/lib/libvulkan.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -38,6 +41,12 @@ vulkan: \
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o:
 
 CMakeFiles/vulkan.dir/src/main.cpp.o:
+
+liblib.a:
+
+/home/liu/vendored/sdl3/lib/libSDL3.so.0.4.0:
+
+/home/liu/vendored/1.4.341.0/x86_64/lib/libvulkan.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 

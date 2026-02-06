@@ -1454,3 +1454,578 @@ events:
       Running the CXX compiler's linker: "/usr/bin/ld" "-v"
       GNU ld (GNU Binutils) 2.45.1
 ...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:517 (find_program)"
+      - "/home/liu/vendored/sdl3/lib/cmake/SDL3/SDL3Config.cmake:90 (find_package)"
+      - "CMakeLists.txt:28 (find_package)"
+    mode: "program"
+    variable: "PKG_CONFIG_EXECUTABLE"
+    description: "pkg-config executable"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pkg-config"
+      - "pkgconf"
+    candidate_directories:
+      - "/home/liu/vendored/sdl3/bin/"
+      - "/home/liu/vendored/sdl3/sbin/"
+      - "/home/liu/vendored/sdl3/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/bin/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/sbin/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/liu/vendored/vulkan/bin/"
+      - "/home/liu/vendored/vulkan/sbin/"
+      - "/home/liu/vendored/vulkan/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/liu/vendored/sdl3/bin/pkg-config"
+      - "/home/liu/vendored/sdl3/bin/pkgconf"
+      - "/home/liu/vendored/sdl3/sbin/pkg-config"
+      - "/home/liu/vendored/sdl3/sbin/pkgconf"
+      - "/home/liu/vendored/sdl3/pkg-config"
+      - "/home/liu/vendored/sdl3/pkgconf"
+      - "/home/liu/vendored/1.4.341.0/x86_64/bin/pkg-config"
+      - "/home/liu/vendored/1.4.341.0/x86_64/bin/pkgconf"
+      - "/home/liu/vendored/1.4.341.0/x86_64/sbin/pkg-config"
+      - "/home/liu/vendored/1.4.341.0/x86_64/sbin/pkgconf"
+      - "/home/liu/vendored/1.4.341.0/x86_64/pkg-config"
+      - "/home/liu/vendored/1.4.341.0/x86_64/pkgconf"
+      - "/usr/local/bin/pkg-config"
+      - "/usr/local/bin/pkgconf"
+    found: "/usr/bin/pkg-config"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "/home/liu/vendored/sdl3/lib/cmake/SDL3/SDL3Config.cmake:92 (pkg_check_modules)"
+      - "CMakeLists.txt:28 (find_package)"
+    mode: "library"
+    variable: "pkgcfg_lib_PC_LIBUNWIND_unwind-generic"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "unwind-generic"
+    candidate_directories:
+      - "/usr/lib/"
+    found: "/usr/lib/libunwind-generic.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/share/cmake/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "/home/liu/vendored/sdl3/lib/cmake/SDL3/SDL3Config.cmake:92 (pkg_check_modules)"
+      - "CMakeLists.txt:28 (find_package)"
+    mode: "library"
+    variable: "pkgcfg_lib_PC_LIBUNWIND_unwind"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "unwind"
+    candidate_directories:
+      - "/usr/lib/"
+    found: "/usr/lib/libunwind.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:28 (find_package)"
+    name: "SDL3"
+    configs:
+      -
+        filename: "SDL3Config.cmake"
+        kind: "cmake"
+      -
+        filename: "sdl3-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "SDL3"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/liu/Programming/vulkan/build/CMakeFiles/pkgRedirects/SDL3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/liu/Programming/vulkan/build/CMakeFiles/pkgRedirects/sdl3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/liu/vendored/sdl3/SDL3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/liu/vendored/sdl3/sdl3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/home/liu/vendored/sdl3/lib/cmake/SDL3/SDL3Config.cmake"
+      mode: "config"
+      version: "3.4.0"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindVulkan.cmake:392 (find_path)"
+      - "CMakeLists.txt:29 (find_package)"
+    mode: "path"
+    variable: "Vulkan_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vulkan/vulkan.h"
+    candidate_directories:
+      - "/home/liu/vendored/sdl3/include/"
+      - "/home/liu/vendored/sdl3/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/include/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/"
+      - "/include/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/home/liu/vendored/vulkan/include/"
+      - "/home/liu/vendored/vulkan/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/home/liu/vendored/sdl3/include/vulkan/vulkan.h"
+      - "/home/liu/vendored/sdl3/vulkan/vulkan.h"
+    found: "/home/liu/vendored/1.4.341.0/x86_64/include/"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindVulkan.cmake:399 (find_library)"
+      - "CMakeLists.txt:29 (find_package)"
+    mode: "library"
+    variable: "Vulkan_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vulkan"
+    candidate_directories:
+      - "/home/liu/vendored/sdl3/lib/"
+      - "/home/liu/vendored/sdl3/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/lib/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/"
+      - "/lib/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/lib/"
+      - "/home/liu/vendored/vulkan/lib/"
+      - "/home/liu/vendored/vulkan/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/lib/"
+      - "/usr/pkg/"
+      - "/opt/lib/"
+      - "/opt/"
+      - "/usr/lib/X11/"
+    searched_directories:
+      - "/home/liu/vendored/sdl3/lib/"
+      - "/home/liu/vendored/sdl3/"
+    found: "/home/liu/vendored/1.4.341.0/x86_64/lib/libvulkan.so"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindVulkan.cmake:407 (find_program)"
+      - "CMakeLists.txt:29 (find_package)"
+    mode: "program"
+    variable: "Vulkan_GLSLC_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glslc"
+    candidate_directories:
+      - "/home/liu/vendored/sdl3/bin/"
+      - "/home/liu/vendored/sdl3/sbin/"
+      - "/home/liu/vendored/sdl3/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/bin/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/sbin/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/"
+      - "/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/liu/vendored/vulkan/bin/"
+      - "/home/liu/vendored/vulkan/sbin/"
+      - "/home/liu/vendored/vulkan/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/liu/vendored/sdl3/bin/glslc"
+      - "/home/liu/vendored/sdl3/sbin/glslc"
+      - "/home/liu/vendored/sdl3/glslc"
+    found: "/home/liu/vendored/1.4.341.0/x86_64/bin/glslc"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindVulkan.cmake:415 (find_program)"
+      - "CMakeLists.txt:29 (find_package)"
+    mode: "program"
+    variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glslangValidator"
+    candidate_directories:
+      - "/home/liu/vendored/sdl3/bin/"
+      - "/home/liu/vendored/sdl3/sbin/"
+      - "/home/liu/vendored/sdl3/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/bin/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/sbin/"
+      - "/home/liu/vendored/1.4.341.0/x86_64/"
+      - "/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/liu/vendored/vulkan/bin/"
+      - "/home/liu/vendored/vulkan/sbin/"
+      - "/home/liu/vendored/vulkan/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/liu/vendored/sdl3/bin/glslangValidator"
+      - "/home/liu/vendored/sdl3/sbin/glslangValidator"
+      - "/home/liu/vendored/sdl3/glslangValidator"
+    found: "/home/liu/vendored/1.4.341.0/x86_64/bin/glslangValidator"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/liu/vendored/sdl3"
+        - "/home/liu/vendored/1.4.341.0/x86_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/home/liu/vendored/vulkan"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/liu/vendored/vulkan"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...

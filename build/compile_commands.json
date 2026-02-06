@@ -1,7 +1,13 @@
 [
 {
   "directory": "/home/liu/Programming/vulkan/build",
-  "command": "/usr/bin/c++    -o CMakeFiles/vulkan.dir/src/main.cpp.o -c /home/liu/Programming/vulkan/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/liu/Programming/vulkan/include -I/home/liu/vendored/sdl3/include -isystem /home/liu/vendored/1.4.341.0/x86_64/include  -o CMakeFiles/lib.dir/src/application.cpp.o -c /home/liu/Programming/vulkan/src/application.cpp",
+  "file": "/home/liu/Programming/vulkan/src/application.cpp",
+  "output": "CMakeFiles/lib.dir/src/application.cpp.o"
+},
+{
+  "directory": "/home/liu/Programming/vulkan/build",
+  "command": "/usr/bin/c++  -I/home/liu/vendored/1.4.341.0/x86_64/include -I/home/liu/Programming/vulkan/include  -o CMakeFiles/vulkan.dir/src/main.cpp.o -c /home/liu/Programming/vulkan/src/main.cpp",
   "file": "/home/liu/Programming/vulkan/src/main.cpp",
   "output": "CMakeFiles/vulkan.dir/src/main.cpp.o"
 }

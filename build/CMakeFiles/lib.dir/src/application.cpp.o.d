@@ -1,8 +1,10 @@
-CMakeFiles/vulkan.dir/src/main.cpp.o: \
- /home/liu/Programming/vulkan/src/main.cpp /usr/include/stdc-predef.h \
+CMakeFiles/lib.dir/src/application.cpp.o: \
+ /home/liu/Programming/vulkan/src/application.cpp \
+ /usr/include/stdc-predef.h \
  /home/liu/Programming/vulkan/include/application.hpp \
- /usr/include/SDL3/SDL.h /usr/include/SDL3/SDL_stdinc.h \
- /usr/include/SDL3/SDL_platform_defines.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_stdinc.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_platform_defines.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/string.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -20,38 +22,67 @@ CMakeFiles/vulkan.dir/src/main.cpp.o: \
  /usr/include/stdint.h /usr/include/bits/types.h \
  /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/SDL3/SDL_begin_code.h \
- /usr/include/SDL3/SDL_close_code.h /usr/include/SDL3/SDL_assert.h \
- /usr/include/SDL3/SDL_asyncio.h /usr/include/SDL3/SDL_atomic.h \
- /usr/include/SDL3/SDL_audio.h /usr/include/SDL3/SDL_endian.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/endianness.h /usr/include/bits/byteswap.h \
- /usr/include/bits/uintn-identity.h /usr/include/SDL3/SDL_error.h \
- /usr/include/SDL3/SDL_mutex.h /usr/include/SDL3/SDL_thread.h \
- /usr/include/SDL3/SDL_properties.h /usr/include/SDL3/SDL_iostream.h \
- /usr/include/SDL3/SDL_bits.h /usr/include/SDL3/SDL_blendmode.h \
- /usr/include/SDL3/SDL_camera.h /usr/include/SDL3/SDL_pixels.h \
- /usr/include/SDL3/SDL_surface.h /usr/include/SDL3/SDL_rect.h \
- /usr/include/SDL3/SDL_clipboard.h /usr/include/SDL3/SDL_cpuinfo.h \
- /usr/include/SDL3/SDL_dialog.h /usr/include/SDL3/SDL_video.h \
- /usr/include/SDL3/SDL_dlopennote.h /usr/include/SDL3/SDL_events.h \
- /usr/include/SDL3/SDL_gamepad.h /usr/include/SDL3/SDL_guid.h \
- /usr/include/SDL3/SDL_joystick.h /usr/include/SDL3/SDL_power.h \
- /usr/include/SDL3/SDL_sensor.h /usr/include/SDL3/SDL_keyboard.h \
- /usr/include/SDL3/SDL_keycode.h /usr/include/SDL3/SDL_scancode.h \
- /usr/include/SDL3/SDL_mouse.h /usr/include/SDL3/SDL_pen.h \
- /usr/include/SDL3/SDL_touch.h /usr/include/SDL3/SDL_filesystem.h \
- /usr/include/SDL3/SDL_gpu.h /usr/include/SDL3/SDL_haptic.h \
- /usr/include/SDL3/SDL_hidapi.h /usr/include/SDL3/SDL_hints.h \
- /usr/include/SDL3/SDL_init.h /usr/include/SDL3/SDL_loadso.h \
- /usr/include/SDL3/SDL_locale.h /usr/include/SDL3/SDL_log.h \
- /usr/include/SDL3/SDL_messagebox.h /usr/include/SDL3/SDL_metal.h \
- /usr/include/SDL3/SDL_misc.h /usr/include/SDL3/SDL_platform.h \
- /usr/include/SDL3/SDL_process.h /usr/include/SDL3/SDL_render.h \
- /usr/include/SDL3/SDL_storage.h /usr/include/SDL3/SDL_system.h \
- /usr/include/SDL3/SDL_time.h /usr/include/SDL3/SDL_timer.h \
- /usr/include/SDL3/SDL_tray.h /usr/include/SDL3/SDL_version.h \
- /usr/include/SDL3/SDL_oldnames.h /usr/include/SDL3/SDL_vulkan.h \
+ /usr/include/bits/stdint-least.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_begin_code.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_close_code.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_assert.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_asyncio.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_atomic.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_audio.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_endian.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_error.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_mutex.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_thread.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_properties.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_iostream.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_bits.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_blendmode.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_camera.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_pixels.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_surface.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_rect.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_clipboard.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_cpuinfo.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_dialog.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_video.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_dlopennote.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_events.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_gamepad.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_guid.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_joystick.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_power.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_sensor.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_keyboard.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_keycode.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_scancode.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_mouse.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_pen.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_touch.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_filesystem.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_gpu.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_haptic.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_hidapi.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_hints.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_init.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_loadso.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_locale.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_log.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_messagebox.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_metal.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_misc.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_platform.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_process.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_render.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_storage.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_system.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_time.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_timer.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_tray.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_version.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_oldnames.h \
+ /home/liu/vendored/sdl3/include/SDL3/SDL_vulkan.h \
  /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_raii.hpp \
  /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan.hpp \
  /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan.h \

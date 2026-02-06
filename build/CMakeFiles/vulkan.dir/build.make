@@ -96,6 +96,9 @@ vulkan_EXTERNAL_OBJECTS =
 vulkan: CMakeFiles/vulkan.dir/src/main.cpp.o
 vulkan: CMakeFiles/vulkan.dir/build.make
 vulkan: CMakeFiles/vulkan.dir/compiler_depend.ts
+vulkan: liblib.a
+vulkan: /home/liu/vendored/sdl3/lib/libSDL3.so.0.4.0
+vulkan: /home/liu/vendored/1.4.341.0/x86_64/lib/libvulkan.so
 vulkan: CMakeFiles/vulkan.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/liu/Programming/vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vulkan"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vulkan.dir/link.txt --verbose=$(VERBOSE)

@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/vulkan.dir/link.d CMakeFiles/vulkan.dir/src/main.cpp.o -o vulkan
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/vulkan.dir/link.d CMakeFiles/vulkan.dir/src/main.cpp.o -o vulkan  -Wl,-rpath,/home/liu/vendored/sdl3/lib:/home/liu/vendored/1.4.341.0/x86_64/lib liblib.a /home/liu/vendored/sdl3/lib/libSDL3.so.0.4.0 /home/liu/vendored/1.4.341.0/x86_64/lib/libvulkan.so

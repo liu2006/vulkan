@@ -136,6 +136,43 @@ vulkan/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vulkan.dir/build.make CMakeFiles/vulkan.dir/build
 .PHONY : vulkan/fast
 
+#=============================================================================
+# Target rules for targets named lib
+
+# Build rule for target.
+lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib
+.PHONY : lib
+
+# fast build rule for target.
+lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/build
+.PHONY : lib/fast
+
+src/application.o: src/application.cpp.o
+.PHONY : src/application.o
+
+# target to build an object file
+src/application.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/application.cpp.o
+.PHONY : src/application.cpp.o
+
+src/application.i: src/application.cpp.i
+.PHONY : src/application.i
+
+# target to preprocess a source file
+src/application.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/application.cpp.i
+.PHONY : src/application.cpp.i
+
+src/application.s: src/application.cpp.s
+.PHONY : src/application.s
+
+# target to generate assembly for a file
+src/application.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/application.cpp.s
+.PHONY : src/application.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -169,7 +206,11 @@ help:
 	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... lib"
 	@echo "... vulkan"
+	@echo "... src/application.o"
+	@echo "... src/application.i"
+	@echo "... src/application.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
