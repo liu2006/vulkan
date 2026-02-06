@@ -7,6 +7,7 @@
 
 (setq custom-file "~/.emacs.custom.el")
 
+(column-number-mode)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
@@ -52,7 +53,12 @@
     (add-to-list 'eglot-server-programs
 	             '(c-mode . ("clangd")))
     (add-to-list 'eglot-server-programs
-	             '(cmake-mode . ("cmake-language-server"))))
+	             '(cmake-mode . ("cmake-language-server")))
+    )
+
+(add-hook 'eglot-managed-mode-hook
+          (lambda ()
+            (flymake-mode -1)))
 
 (defun c-custom-indent()
     (setq c-basic-offset 4
