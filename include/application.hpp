@@ -1,4 +1,5 @@
 #pragma once
+#include <limits>
 #include <algorithm>
 #include <SDL3/SDL.h>
 #include <exception>
@@ -46,6 +47,9 @@ private:
     void pickPhysicalDevice();
     void createLogicDevice();
     void createSurface();
+    void createSwapChain();
+    vk::SurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<vk::SurfaceFormatKHR> &availableFormats);
+    vk::Extent2D chooseSwapExtent(const vk::SurfaceCapabilitiesKHR &capabilities);
     std::vector<const char *> getRequiredExtensions();
     std::vector<const char *> requiredDeviceExtensions{vk::KHRSwapchainExtensionName};
 public:

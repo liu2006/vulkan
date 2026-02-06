@@ -4,7 +4,7 @@ TabWidth: 4        # Tab 宽度 4 个空格
 UseTab: Never            # 不使用真实 Tab，全部用空格
 IndentAccessModifiers: false
 AccessModifierOffset:  -4 
-ColumnLimit: 120
+ColumnLimit: 100
 
 BreakBeforeBraces: Custom
 BraceWrapping:

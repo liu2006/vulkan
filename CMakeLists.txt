@@ -35,6 +35,3 @@ target_link_libraries(lib PRIVATE SDL3::SDL3 Vulkan::Vulkan)
 target_link_libraries(${PROJECT_NAME} PRIVATE lib)
 
 
-
-
-
