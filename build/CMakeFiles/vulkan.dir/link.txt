@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/vulkan.dir/link.d CMakeFiles/vulkan.dir/src/main.cpp.o -o vulkan

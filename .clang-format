@@ -1,0 +1,18 @@
+BasedOnStyle: LLVM       # 基于 LLVM 风格，作为基础，包含常用缩进和对齐规则
+IndentWidth: 4          # 每一级缩进 4 个空格
+TabWidth: 4        # Tab 宽度 4 个空格
+UseTab: Never            # 不使用真实 Tab，全部用空格
+IndentAccessModifiers: false
+AccessModifierOffset:  -4 
+ColumnLimit: 120
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+  AfterClass: true
+  AfterStruct: true
+  AfterEnum: true
+
+  AfterControlStatement: false
+  BeforeElse: false
+  BeforeCatch: false

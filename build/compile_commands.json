@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/liu/Programming/vulkan/build",
+  "command": "/usr/bin/c++    -o CMakeFiles/vulkan.dir/src/main.cpp.o -c /home/liu/Programming/vulkan/src/main.cpp",
+  "file": "/home/liu/Programming/vulkan/src/main.cpp",
+  "output": "CMakeFiles/vulkan.dir/src/main.cpp.o"
+}
+]
