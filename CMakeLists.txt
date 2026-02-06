@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 4.2.1)
 project(vulkan)
 
-set(CMAKE_CXX_STANDERD 20)
-set(CMAKE_CXX_STANDERD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(${PROJECT_NAME})
@@ -12,6 +12,7 @@ add_library(lib)
 target_sources(lib
     PRIVATE
     src/application.cpp
+    src/sdlException.cpp
     
     PUBLIC
     FILE_SET
@@ -22,6 +23,7 @@ target_sources(lib
     include
     FILES
     include/application.hpp
+    include/sdlException.hpp
 )
 
 list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/sdl3" "$ENV{HOME}/vendored/1.4.341.0/x86_64")

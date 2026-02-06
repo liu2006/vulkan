@@ -1,5 +1,5 @@
-CMakeFiles/lib.dir/src/application.cpp.o: \
- /home/liu/Programming/vulkan/src/application.cpp \
+CMakeFiles/lib.dir/src/sdlException.cpp.o: \
+ /home/liu/Programming/vulkan/src/sdlException.cpp \
  /usr/include/stdc-predef.h \
  /home/liu/Programming/vulkan/include/sdlException.hpp \
  /usr/include/c++/15.2.1/format \
@@ -230,82 +230,4 @@ CMakeFiles/lib.dir/src/application.cpp.o: \
  /home/liu/vendored/sdl3/include/SDL3/SDL_timer.h \
  /home/liu/vendored/sdl3/include/SDL3/SDL_tray.h \
  /home/liu/vendored/sdl3/include/SDL3/SDL_version.h \
- /home/liu/vendored/sdl3/include/SDL3/SDL_oldnames.h \
- /home/liu/Programming/vulkan/include/application.hpp \
- /home/liu/vendored/sdl3/include/SDL3/SDL_vulkan.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_raii.hpp \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan.hpp \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vk_platform.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_core.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h264std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codecs_common.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h264std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h265std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h265std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std_decode.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std_encode.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_vp9std_decode.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_vp9std.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_hpp_macros.hpp \
- /usr/include/c++/15.2.1/version /usr/include/c++/15.2.1/algorithm \
- /usr/include/c++/15.2.1/bits/ranges_algo.h \
- /usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h \
- /usr/include/c++/15.2.1/pstl/execution_defs.h \
- /usr/include/c++/15.2.1/cassert /usr/include/assert.h \
- /usr/include/c++/15.2.1/utility \
- /usr/include/c++/15.2.1/bits/stl_relops.h /usr/include/c++/15.2.1/vector \
- /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/15.2.1/bits/stl_vector.h \
- /usr/include/c++/15.2.1/bits/stl_bvector.h \
- /usr/include/c++/15.2.1/bits/vector.tcc /usr/include/dlfcn.h \
- /usr/include/bits/dlfcn.h /usr/include/bits/dl_find_object.h \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_enums.hpp \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_to_string.hpp \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_handles.hpp \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_structs.hpp \
- /usr/include/c++/15.2.1/cstring \
- /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_funcs.hpp \
- /usr/include/c++/15.2.1/memory \
- /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15.2.1/bits/align.h \
- /usr/include/c++/15.2.1/bits/unique_ptr.h \
- /usr/include/c++/15.2.1/bits/ostream.h /usr/include/c++/15.2.1/ios \
- /usr/include/c++/15.2.1/bits/basic_ios.h \
- /usr/include/c++/15.2.1/bits/basic_ios.tcc \
- /usr/include/c++/15.2.1/bits/shared_ptr.h \
- /usr/include/c++/15.2.1/bits/shared_ptr_base.h \
- /usr/include/c++/15.2.1/bits/allocated_ptr.h \
- /usr/include/c++/15.2.1/ext/aligned_buffer.h \
- /usr/include/c++/15.2.1/ext/concurrence.h \
- /usr/include/c++/15.2.1/bits/shared_ptr_atomic.h \
- /usr/include/c++/15.2.1/bits/atomic_base.h \
- /usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/15.2.1/bits/atomic_wait.h \
- /usr/include/c++/15.2.1/climits \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/unistd.h \
- /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
- /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
- /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
- /usr/include/linux/close_range.h /usr/include/syscall.h \
- /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
- /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
- /usr/include/c++/15.2.1/bits/std_mutex.h \
- /usr/include/c++/15.2.1/backward/auto_ptr.h \
- /usr/include/c++/15.2.1/bits/ranges_uninitialized.h \
- /usr/include/c++/15.2.1/pstl/glue_memory_defs.h \
- /usr/include/c++/15.2.1/iostream /usr/include/c++/15.2.1/ostream \
- /usr/include/c++/15.2.1/bits/ostream.tcc /usr/include/c++/15.2.1/istream \
- /usr/include/c++/15.2.1/bits/istream.tcc
+ /home/liu/vendored/sdl3/include/SDL3/SDL_oldnames.h

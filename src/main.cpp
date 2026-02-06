@@ -1,14 +1,14 @@
 #include "application.hpp"
 
-
 int main()
 {
-    Application app{};
-    std::cout << "Hello World" << std::endl;
-    for (int i{}; i < 10; i++) {
-        std::cout << i << std::endl;
+    try {
+        Application app{};
+        app.run();
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+        return EXIT_FAILURE;
     }
-        
-    return 0;
+    return EXIT_SUCCESS;
 }
  

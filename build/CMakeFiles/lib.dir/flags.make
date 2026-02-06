@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/liu/Programming/vulkan/include -I/home/liu/vendored/sdl3/include -isystem /home/liu/vendored/1.4.341.0/x86_64/include
 
-CXX_FLAGS = 
+CXX_FLAGS = -std=gnu++20
 
