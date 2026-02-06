@@ -21,9 +21,11 @@
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 
-(add-to-list 'default-frame-alist
-	         '(font . "CaskaydiaMonoNerdFont-19"))
+;; (add-to-list 'default-frame-alist
+;; 	         '(font . "CaskaydiaMonoNerdFont-19"))
 
+(add-to-list 'default-frame-alist
+             '(font . "MonaspaceNeonNF-18"))
 (use-package magit
     :ensure t)
 
