@@ -39,6 +39,87 @@ void Application::initVulkan()
 {
     createInstance();
     setupDebugMessenger();
+    createSurface();
+    pickPhysicalDevice();
+    createLogicDevice();
+}
+void Application::createSurface()
+{
+    VkSurfaceKHR _surface{};
+    if (!SDL_Vulkan_CreateSurface(window, *instance, nullptr, &_surface))
+        throw std::runtime_error("Couldn't create surface");
+    surface = vk::raii::SurfaceKHR(instance, _surface);
+    
+}
+void Application::createLogicDevice()
+{
+    std::vector<vk::QueueFamilyProperties> queueFamilyProperties = physicalDevice.getQueueFamilyProperties();
+
+    uint32_t queueIndex = ~0;
+    for (uint32_t qfpIndex{}; qfpIndex < queueFamilyProperties.size(); qfpIndex++) {
+        if ((queueFamilyProperties[qfpIndex].queueFlags & vk::QueueFlagBits::eGraphics) &&
+            physicalDevice.getSurfaceSupportKHR(qfpIndex, *surface)) {
+            queueIndex = qfpIndex;
+            break;
+        }
+    }
+    if (queueIndex == ~0) {
+        throw std::runtime_error("Couldn't find queue Graphics/Persent");
+    }
+
+    vk::StructureChain<vk::PhysicalDeviceFeatures2, vk::PhysicalDeviceVulkan13Features,
+                       vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT>
+        featuresChain{};
+    featuresChain.get<vk::PhysicalDeviceVulkan13Features>().dynamicRendering = true;
+    featuresChain.get<vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT>().extendedDynamicState = true;
+
+    float queuePriority{0.5f};
+    vk::DeviceQueueCreateInfo deviceQueueCreateInfo{};
+    deviceQueueCreateInfo.pQueuePriorities = &queuePriority;
+    deviceQueueCreateInfo.queueCount = 1;
+    deviceQueueCreateInfo.queueFamilyIndex = queueIndex;
+
+    vk::DeviceCreateInfo deviceCreateInfo{};
+    deviceCreateInfo.pNext = featuresChain.get<vk::PhysicalDeviceFeatures2>();
+    deviceCreateInfo.pQueueCreateInfos = &deviceQueueCreateInfo;
+    deviceCreateInfo.queueCreateInfoCount = 1;
+    deviceCreateInfo.ppEnabledExtensionNames = requiredDeviceExtensions.data();
+    deviceCreateInfo.enabledExtensionCount = static_cast<uint32_t>(requiredDeviceExtensions.size());
+
+    device = vk::raii::Device(physicalDevice, deviceCreateInfo);
+    queue = vk::raii::Queue(device, queueIndex, 0);
+}
+void Application::pickPhysicalDevice()
+{
+    std::vector<vk::raii::PhysicalDevice> devices = instance.enumeratePhysicalDevices();
+    auto devIter = std::ranges::find_if(devices, [&](const auto &device) {
+        bool supportsVulkan1_3 = device.getProperties().apiVersion >= VK_API_VERSION_1_3;
+        auto queueFamilyProperties = device.getQueueFamilyProperties();
+
+        bool supportsGraphics = std::ranges::any_of(queueFamilyProperties, [](const auto &queueFamilyProperty) {
+            return (queueFamilyProperty.queueFlags & vk::QueueFlagBits::eGraphics) != static_cast<vk::QueueFlags>(0);
+        });
+
+        auto availableDeviceExtensions = device.enumerateDeviceExtensionProperties();
+        bool supportsAllRequiredExtensions = std::ranges::all_of(
+            requiredDeviceExtensions, [&availableDeviceExtensions](const auto &requiredDeviceExtension) {
+                return std::ranges::any_of(availableDeviceExtensions, [requiredDeviceExtension](const auto &availableDeviceExtension) {
+                    return std::strcmp(availableDeviceExtension.extensionName, requiredDeviceExtension) == 0;
+                });
+            });
+        auto features = device.template getFeatures2<vk::PhysicalDeviceFeatures2, vk::PhysicalDeviceVulkan13Features,
+                                                     vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT>();
+        bool supportsRequiredFeatures =
+            features.template get<vk::PhysicalDeviceVulkan13Features>().dynamicRendering &&
+            features.template get<vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT>().extendedDynamicState;
+        
+        return supportsVulkan1_3 && supportsGraphics && supportsAllRequiredExtensions && supportsRequiredFeatures;
+    });
+    if (devIter == devices.end()) {
+        throw std::runtime_error("Couldn't find suitable GPU");
+    } else {
+        physicalDevice = *devIter;
+    }
 }
 void Application::setupDebugMessenger()
 {

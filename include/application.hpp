@@ -33,13 +33,21 @@ private:
     vk::raii::Context context{};
     vk::raii::Instance instance{nullptr};
     vk::raii::DebugUtilsMessengerEXT debugMessenger{nullptr};
+    vk::raii::PhysicalDevice physicalDevice{nullptr};
+    vk::raii::SurfaceKHR surface{nullptr};
+    vk::raii::Device device{nullptr};
+    vk::raii::Queue queue{nullptr};
     void initWindow();
     void initVulkan();
     void mainLoop();
     void cleanup();
     void createInstance();
     void setupDebugMessenger();
+    void pickPhysicalDevice();
+    void createLogicDevice();
+    void createSurface();
     std::vector<const char *> getRequiredExtensions();
+    std::vector<const char *> requiredDeviceExtensions{vk::KHRSwapchainExtensionName};
 public:
     Application(uint32_t width = WIDTH, uint32_t height = HEIGHT, const char *prefix = TITLE);
     ~Application();
