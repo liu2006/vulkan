@@ -1,19 +1,15 @@
 #pragma once
 #include <limits>
-#include <algorithm>
+#include <vector>
 #include <SDL3/SDL.h>
-#include <exception>
-#include <cstdlib>
+#include <cstdint>
 #include <SDL3/SDL_vulkan.h>
 #include <vulkan/vulkan_raii.hpp>
 #include <iostream>
-#include <cstdint>
-#include <vector>
+#include <memory>
+#include <algorithm>
 #include <cstring>
 
-constexpr uint32_t WIDTH{800};
-constexpr uint32_t HEIGHT{600};
-constexpr const char *TITLE{"vulkan"};
 const std::vector<const char *> validationLayers{"VK_LAYER_KHRONOS_validation"};
 
 #ifdef NDEBUG
@@ -25,35 +21,38 @@ constexpr bool enableValidationLayers{true};
 class Application
 {
 private:
-    SDL_Window *window{nullptr};
-    SDL_Renderer *renderer{nullptr};
-    uint32_t windowWidth{};
-    uint32_t windowHeight{};
-    const char *title{};
+    uint32_t width;
+    uint32_t height;
+    const char *title;
     bool running{true};
-    vk::raii::Context context{};
+    SDL_Window *window{nullptr};
+    vk::raii::Context context;
     vk::raii::Instance instance{nullptr};
     vk::raii::DebugUtilsMessengerEXT debugMessenger{nullptr};
-    vk::raii::PhysicalDevice physicalDevice{nullptr};
     vk::raii::SurfaceKHR surface{nullptr};
+    vk::raii::PhysicalDevice physicalDevice{nullptr};
     vk::raii::Device device{nullptr};
     vk::raii::Queue queue{nullptr};
+    vk::raii::SwapchainKHR swapChain{nullptr};
+    std::vector<vk::Image> swapChainImages;
+    
+    
     void initWindow();
     void initVulkan();
     void mainLoop();
     void cleanup();
     void createInstance();
+    std::vector<const char *> getRequiredExtensions();
     void setupDebugMessenger();
+    void createSurface();
     void pickPhysicalDevice();
     void createLogicDevice();
-    void createSurface();
     void createSwapChain();
-    vk::SurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<vk::SurfaceFormatKHR> &availableFormats);
-    vk::Extent2D chooseSwapExtent(const vk::SurfaceCapabilitiesKHR &capabilities);
-    std::vector<const char *> getRequiredExtensions();
     std::vector<const char *> requiredDeviceExtensions{vk::KHRSwapchainExtensionName};
+
 public:
-    Application(uint32_t width = WIDTH, uint32_t height = HEIGHT, const char *prefix = TITLE);
+    Application();
+    Application(uint32_t width, uint32_t height, const char *title);
     ~Application();
     void run();
 };

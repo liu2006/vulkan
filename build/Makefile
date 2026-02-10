@@ -197,30 +197,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vulkan.dir/build.make CMakeFiles/vulkan.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/sdlException.o: src/sdlException.cpp.o
-.PHONY : src/sdlException.o
-
-# target to build an object file
-src/sdlException.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/sdlException.cpp.o
-.PHONY : src/sdlException.cpp.o
-
-src/sdlException.i: src/sdlException.cpp.i
-.PHONY : src/sdlException.i
-
-# target to preprocess a source file
-src/sdlException.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/sdlException.cpp.i
-.PHONY : src/sdlException.cpp.i
-
-src/sdlException.s: src/sdlException.cpp.s
-.PHONY : src/sdlException.s
-
-# target to generate assembly for a file
-src/sdlException.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/sdlException.cpp.s
-.PHONY : src/sdlException.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -238,9 +214,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/sdlException.o"
-	@echo "... src/sdlException.i"
-	@echo "... src/sdlException.s"
 .PHONY : help
 
 

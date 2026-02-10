@@ -12,7 +12,6 @@ add_library(lib)
 target_sources(lib
     PRIVATE
     src/application.cpp
-    src/sdlException.cpp
     
     PUBLIC
     FILE_SET
@@ -23,7 +22,6 @@ target_sources(lib
     include
     FILES
     include/application.hpp
-    include/sdlException.hpp
 )
 
 list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/sdl3" "$ENV{HOME}/vendored/1.4.341.0/x86_64")

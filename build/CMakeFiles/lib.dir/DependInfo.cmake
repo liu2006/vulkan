@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/liu/Programming/vulkan/src/application.cpp" "CMakeFiles/lib.dir/src/application.cpp.o" "gcc" "CMakeFiles/lib.dir/src/application.cpp.o.d"
-  "/home/liu/Programming/vulkan/src/sdlException.cpp" "CMakeFiles/lib.dir/src/sdlException.cpp.o" "gcc" "CMakeFiles/lib.dir/src/sdlException.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lib.dir/src/application.cpp.o"
   "CMakeFiles/lib.dir/src/application.cpp.o.d"
-  "CMakeFiles/lib.dir/src/sdlException.cpp.o"
-  "CMakeFiles/lib.dir/src/sdlException.cpp.o.d"
   "liblib.a"
   "liblib.pdb"
 )

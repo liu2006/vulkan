@@ -1,2 +1,2 @@
-/usr/bin/ar qc liblib.a CMakeFiles/lib.dir/src/application.cpp.o CMakeFiles/lib.dir/src/sdlException.cpp.o
+/usr/bin/ar qc liblib.a CMakeFiles/lib.dir/src/application.cpp.o
 /usr/bin/ranlib liblib.a
