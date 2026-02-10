@@ -15,6 +15,7 @@
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
 
+
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 (setq inhibit-startup-screen t)
@@ -81,3 +82,4 @@
               (setq lisp-body-indent 4
                     tab-width 4
                     indent-tabs-mode nil)))
+(put 'set-goal-column 'disabled nil)
