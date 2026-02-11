@@ -24,7 +24,9 @@ target_sources(lib
     include/application.hpp
 )
 
-list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/sdl3" "$ENV{HOME}/vendored/1.4.341.0/x86_64")
+list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/sdl3")
+list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/1.4.341.0/x86_64")
+    
 find_package(SDL3 CONFIG REQUIRED)
 find_package(Vulkan REQUIRED)
 

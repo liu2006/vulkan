@@ -46,6 +46,10 @@
 (use-package cmake-mode
     :ensure t)
 
+(use-package glsl-mode
+    :ensure t)
+(add-to-list 'auto-mode-alist '("\\.slang\\'" . glsl-mode))
+
 (use-package eglot
     :ensure t
     :hook
@@ -59,6 +63,7 @@
 	             '(cmake-mode . ("cmake-language-server")))
     )
 
+
 (add-hook 'eglot-managed-mode-hook
           (lambda ()
             (flymake-mode -1)))
@@ -68,6 +73,7 @@
           tab-width 4
 	      indent-tabs-mode nil)
     )
+
 (add-hook 'c++-mode-hook #'c-custom-indent)
 (add-hook 'c-mode-hook #'c-custom-indent)
 
@@ -82,4 +88,5 @@
               (setq lisp-body-indent 4
                     tab-width 4
                     indent-tabs-mode nil)))
+
 (put 'set-goal-column 'disabled nil)
