@@ -1,4 +1,5 @@
 #pragma once
+#include <fstream>
 #include <limits>
 #include <vector>
 #include <SDL3/SDL.h>
@@ -35,8 +36,9 @@ private:
     vk::raii::Queue queue{nullptr};
     vk::raii::SwapchainKHR swapChain{nullptr};
     std::vector<vk::Image> swapChainImages;
-    
-    
+    std::vector<vk::raii::ImageView> swapChainImageViews;
+    vk::Format swapChainImageFormat = vk::Format::eUndefined;
+
     void initWindow();
     void initVulkan();
     void mainLoop();
@@ -48,8 +50,10 @@ private:
     void pickPhysicalDevice();
     void createLogicDevice();
     void createSwapChain();
+    void createImageViews();
+    void createGraphicsPipeline();
     std::vector<const char *> requiredDeviceExtensions{vk::KHRSwapchainExtensionName};
-
+    [[nodiscard]] vk::raii::ShaderModule createShaderModule(const std::vector<char> &code) const;
 public:
     Application();
     Application(uint32_t width, uint32_t height, const char *title);

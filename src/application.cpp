@@ -38,7 +38,22 @@ void Application::initVulkan()
     pickPhysicalDevice();
     createLogicDevice();
     createSwapChain();
+    createImageViews();
+    createGraphicsPipeline();
 }
+
+static std::vector<char> readFile(const std::string &filename)
+{
+    std::ifstream file(filename, std::ios::ate | std::ios::binary);
+    if (!file.is_open())
+        throw std::runtime_error("Couldn't open binary file");
+    std::vector<char> buffer(file.tellg());
+    file.seekg(0, std::ios::beg);
+    file.read(buffer.data(), static_cast<std::streamsize>(buffer.size()));
+    file.close();
+    return buffer;
+}
+
 static uint32_t chooseSwapMinImageCount(const vk::SurfaceCapabilitiesKHR &capabilities)
 {
     uint32_t minImageCount = std::max(3u, capabilities.minImageCount);
@@ -83,6 +98,43 @@ chooseSwapSurfaceFormat(const std::vector<vk::SurfaceFormatKHR> &availableFormat
     });
     return (formatIter != availableFormats.end()) ? *formatIter : availableFormats[0];
 }
+[[nodiscard]] vk::raii::ShaderModule Application::createShaderModule(const std::vector<char> &code) const
+{
+    vk::ShaderModuleCreateInfo createInfo;
+    createInfo.codeSize = code.size() * sizeof(char);
+    createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
+    vk::raii::ShaderModule shaderModule{device, createInfo};
+    
+    return shaderModule;
+}
+
+void Application::createGraphicsPipeline()
+{
+    vk::raii::ShaderModule shaderModule = createShaderModule(readFile("../shaders/slang.spv"));
+
+    vk::PipelineShaderStageCreateInfo vertShaderStageInfo;
+    vertShaderStageInfo.stage = vk::ShaderStageFlagBits::eVertex;
+    vertShaderStageInfo.module = shaderModule;
+    vertShaderStageInfo.pName = "vertMain";
+    vk::PipelineShaderStageCreateInfo fragShaderStageInfo;
+    fragShaderStageInfo.stage = vk::ShaderStageFlagBits::eFragment;
+    fragShaderStageInfo.module = shaderModule;
+    fragShaderStageInfo.pName = "fragMent";
+    vk::PipelineShaderStageCreateInfo shaderStages[] {vertShaderStageInfo, fragShaderStageInfo};
+}
+
+void Application::createImageViews()
+{
+    vk::ImageViewCreateInfo imageViewCreateInfo;
+    imageViewCreateInfo.viewType = vk::ImageViewType::e2D;
+    imageViewCreateInfo.format = swapChainImageFormat;
+    imageViewCreateInfo.subresourceRange = {vk::ImageAspectFlagBits::eColor, 0, 1, 0, 1};
+    for (auto &image : swapChainImages) {
+        imageViewCreateInfo.image = image;
+        vk::raii::ImageView view{device, imageViewCreateInfo};
+        swapChainImageViews.push_back(std::move(view));
+    }
+}
 
 void Application::createSwapChain()
 {
@@ -117,6 +169,7 @@ void Application::createSwapChain()
 
     swapChain = vk::raii::SwapchainKHR(device, swapChainCreateInfo);
     swapChainImages = swapChain.getImages();
+    swapChainImageFormat = swapChainSurfaceFormat.format;
 }
 
 

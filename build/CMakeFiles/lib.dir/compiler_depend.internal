@@ -4,7 +4,6 @@
 CMakeFiles/lib.dir/src/application.cpp.o
  /home/liu/Programming/vulkan/src/application.cpp
  /home/liu/Programming/vulkan/include/application.hpp
- /home/liu/Programming/vulkan/include/sdlException.hpp
  /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std.h
  /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std_decode.h
  /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std_encode.h

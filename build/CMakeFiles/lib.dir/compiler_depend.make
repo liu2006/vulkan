@@ -3,7 +3,6 @@
 
 CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/application.cpp \
   /home/liu/Programming/vulkan/include/application.hpp \
-  /home/liu/Programming/vulkan/include/sdlException.hpp \
   /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std.h \
   /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std_decode.h \
   /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_av1std_encode.h \
@@ -528,8 +527,6 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 
 /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h:
 
-/usr/include/c++/15.2.1/bits/stl_pair.h:
-
 /usr/include/bits/posix2_lim.h:
 
 /usr/include/bits/locale.h:
@@ -628,8 +625,6 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 
 /home/liu/vendored/sdl3/include/SDL3/SDL_sensor.h:
 
-/home/liu/Programming/vulkan/include/sdlException.hpp:
-
 /home/liu/vendored/sdl3/include/SDL3/SDL_properties.h:
 
 /usr/include/bits/long-double.h:
@@ -684,6 +679,16 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 
 /usr/include/bits/floatn.h:
 
+/usr/include/asm/bitsperlong.h:
+
+/home/liu/vendored/sdl3/include/SDL3/SDL_init.h:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h:
+
+/usr/include/c++/15.2.1/bits/uses_allocator.h:
+
+/home/liu/vendored/sdl3/include/SDL3/SDL_audio.h:
+
 /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan_enums.hpp:
 
 /usr/include/bits/types/time_t.h:
@@ -693,12 +698,6 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 /usr/include/c++/15.2.1/bits/stl_uninitialized.h:
 
 /usr/include/c++/15.2.1/bits/stl_algo.h:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h:
-
-/usr/include/c++/15.2.1/bits/uses_allocator.h:
-
-/home/liu/vendored/sdl3/include/SDL3/SDL_audio.h:
 
 /home/liu/vendored/1.4.341.0/x86_64/include/vulkan/vulkan.h:
 
@@ -719,10 +718,6 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h:
 
 /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h:
-
-/usr/include/asm/bitsperlong.h:
-
-/home/liu/vendored/sdl3/include/SDL3/SDL_init.h:
 
 /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_vp9std.h:
 
@@ -816,6 +811,8 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 
 /usr/include/bits/waitflags.h:
 
+/usr/include/c++/15.2.1/bits/stl_pair.h:
+
 /home/liu/vendored/sdl3/include/SDL3/SDL_messagebox.h:
 
 /home/liu/vendored/1.4.341.0/x86_64/include/vk_video/vulkan_video_codec_h265std.h:
@@ -862,8 +859,6 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 
 /home/liu/vendored/sdl3/include/SDL3/SDL_hints.h:
 
-/home/liu/vendored/sdl3/include/SDL3/SDL_haptic.h:
-
 /usr/include/c++/15.2.1/bits/std_mutex.h:
 
 /home/liu/vendored/sdl3/include/SDL3/SDL_atomic.h:
@@ -871,6 +866,8 @@ CMakeFiles/lib.dir/src/application.cpp.o: /home/liu/Programming/vulkan/src/appli
 /usr/include/stdio.h:
 
 /usr/include/bits/wordsize.h:
+
+/home/liu/vendored/sdl3/include/SDL3/SDL_haptic.h:
 
 /usr/include/c++/15.2.1/ext/numeric_traits.h:
 
