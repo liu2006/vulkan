@@ -1,0 +1,50 @@
+module;
+#include <memory>
+#include <SDL3/SDL.h>
+#include <cstdint>
+#include <vector>
+#include <vulkan/vulkan_raii.hpp>
+
+export module Application;
+
+export class Application
+{
+private:
+    SDL_Window *window;
+    uint32_t width;
+    uint32_t height;
+    const char *title;
+    bool running{true};
+    vk::raii::Context context;
+    vk::raii::Instance instance{nullptr};
+    vk::raii::DebugUtilsMessengerEXT debugMessenger{nullptr};
+    vk::raii::SurfaceKHR surface{nullptr};
+    
+    vk::raii::PhysicalDevice physicalDevice{nullptr};
+    vk::raii::Device device{nullptr};
+    vk::raii::Queue queue{nullptr};
+    vk::raii::SwapchainKHR swapChain{nullptr};
+    std::vector<vk::Image> swapChainImages{};
+    std::vector<vk::raii::ImageView> swapChainImageViews{};
+    
+    vk::SurfaceFormatKHR swapChainSurfaceFormat;
+    vk::Extent2D swapChainExtent;
+    
+    void initWindow();
+    void initVulkan();
+    void mainLoop();
+    void createInstance();
+    void setupDebugMessenger();
+    void createSurface();
+    void pickPhysicalDevice();
+    void createLogicDevice();
+    void createSwapChain();
+    void createImageViews();
+    
+public:
+    ~Application();
+    Application() : width{800}, height{600}, title{"vulkan"} {}
+    Application(uint32_t width, uint32_t height, const char *title);
+    void run();
+};
+
