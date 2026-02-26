@@ -15,12 +15,11 @@
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
 
-
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 (setq inhibit-startup-screen t)
-(setq tab-width 4)
-(setq indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
 
 ;; (add-to-list 'default-frame-alist
 ;; 	         '(font . "CaskaydiaMonoNerdFont-19"))
@@ -44,12 +43,16 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+(use-package yaml-mode
+    :ensure t)
+
 (use-package cmake-mode
     :ensure t)
 
 (use-package glsl-mode
     :ensure t)
 
+(add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.xprofile\\'" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.slang\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.cppm\\'" . c++-mode))
@@ -57,39 +60,20 @@
 (use-package eglot
     :ensure t
     :hook
-    ((c++-mode c-mode cmake-mode) . eglot-ensure)
+    ((c++-mode c-mode) . eglot-ensure)
     :config
     (add-to-list 'eglot-server-programs
                  '(c++-mode . ("clangd")))
     (add-to-list 'eglot-server-programs
 	             '(c-mode . ("clangd")))
-    (add-to-list 'eglot-server-programs
-	             '(cmake-mode . ("cmake-language-server")))
     )
 
 (add-hook 'eglot-managed-mode-hook
           (lambda ()
-            (flymake-mode 0)))
+              (flymake-mode 0)))
 
-(defun c-custom-indent()
-    (setq c-basic-offset 4
-          tab-width 4
-	      indent-tabs-mode nil)
-    )
-
-(add-hook 'c++-mode-hook #'c-custom-indent)
-(add-hook 'c-mode-hook #'c-custom-indent)
-
-(add-hook 'cmake-mode-hook
-          (lambda ()
-              (setq cmake-tab-width 4
-                    tab-width 4
-                    indent-tabs-mode nil)))
-
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-              (setq lisp-body-indent 4
-                    tab-width 4
-                    indent-tabs-mode nil)))
+(setq c-basic-offset 4)
+(setq cmake-tab-width 4)
+(setq lisp-body-indent 4)
 
 (put 'set-goal-column 'disabled nil)
