@@ -1,4 +1,5 @@
 module;
+#include <iostream>
 #include <memory>
 #include <SDL3/SDL.h>
 #include <cstdint>
@@ -10,7 +11,17 @@ export module Application;
 export class Application
 {
 private:
-    SDL_Window *window;
+    struct SDLGuard
+    {
+        SDLGuard() { SDL_Init(SDL_INIT_VIDEO); }
+        ~SDLGuard()
+        {
+            SDL_Quit();
+            std::cout << "Destroyed SDL";
+        }
+    };
+    SDLGuard sdlGuard;
+    std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window{nullptr, SDL_DestroyWindow};
     uint32_t width;
     uint32_t height;
     const char *title;

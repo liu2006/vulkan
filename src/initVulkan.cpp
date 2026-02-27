@@ -73,7 +73,7 @@ void Application::setupDebugMessenger()
 void Application::createSurface()
 {
     VkSurfaceKHR _surface;
-    if (!SDL_Vulkan_CreateSurface(window, *instance, nullptr, &_surface))
+    if (!SDL_Vulkan_CreateSurface(window.get(), *instance, nullptr, &_surface))
         throw std::runtime_error("Couldn't create vulkan surface");
     surface = vk::raii::SurfaceKHR(instance, _surface);
 }
@@ -159,7 +159,7 @@ void Application::createSwapChain()
     auto surfaceCapabilities{physicalDevice.getSurfaceCapabilitiesKHR(*surface)};
     swapChainSurfaceFormat = chooseSwapSurfaceFormat(physicalDevice.getSurfaceFormatsKHR(*surface));
     auto swapChainPresentMode{chooseSwapPresentMode(physicalDevice.getSurfacePresentModesKHR(*surface))};
-    swapChainExtent = chooseSwapExtent(surfaceCapabilities, window);
+    swapChainExtent = chooseSwapExtent(surfaceCapabilities, window.get());
     auto swapChainMinImageCount{chooseSwapMinImageCount(surfaceCapabilities)};
 
     vk::SwapchainCreateInfoKHR swapChainCreateInfo;
@@ -190,7 +190,7 @@ void Application::createImageViews()
 
     for (const auto &image : swapChainImages) {
         imageViewCreateInfo.image = image;
-        vk::raii::ImageView imageView(device, imageViewCreateInfo);
+        vk::raii::ImageView imageView{device, imageViewCreateInfo};
         swapChainImageViews.push_back(std::move(imageView));
     }
 }

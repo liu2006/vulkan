@@ -25,8 +25,7 @@ void Application::run()
 
 void Application::initWindow()
 {
-    SDL_Init(SDL_INIT_VIDEO);
-    window = SDL_CreateWindow(title, width, height, SDL_WINDOW_VULKAN | SDL_WINDOW_HIDDEN);
+    window.reset(SDL_CreateWindow(title, width, height, SDL_WINDOW_VULKAN | SDL_WINDOW_HIDDEN));
 }
 
 void Application::initVulkan()
@@ -41,7 +40,7 @@ void Application::initVulkan()
 }
 void Application::mainLoop()
 {
-    SDL_ShowWindow(window);
+    SDL_ShowWindow(window.get());
     while (running) {
         SDL_Event event;
         while (SDL_PollEvent(&event)) {

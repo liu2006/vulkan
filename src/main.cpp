@@ -13,6 +13,5 @@ int main()
         std::cerr << err.what() << std::endl;
         return EXIT_FAILURE;
     }
-    SDL_Quit();
     return EXIT_SUCCESS;
 }

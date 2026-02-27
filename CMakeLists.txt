@@ -31,10 +31,10 @@ find_package(SDL3 CONFIG REQUIRED)
 find_package(Vulkan REQUIRED)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${SDL3_INCLUDE_DIRS} ${Vulkan_INCLUDE_DIRS})
-target_link_libraries(lib PRIVATE SDL3::SDL3 Vulkan::Vulkan)
-target_link_libraries(${PROJECT_NAME} PRIVATE lib SDL3::SDL3)
+target_link_libraries(lib PUBLIC SDL3::SDL3 Vulkan::Vulkan)
+target_link_libraries(${PROJECT_NAME} PRIVATE lib)
 
-install(TARGETS ${PROJECT} lib
+install(TARGETS ${PROJECT_NAME} lib
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
