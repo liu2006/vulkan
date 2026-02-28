@@ -60,8 +60,9 @@
 ;; (require 'slang-mode)
 
 (use-package slang-mode
-    :load-path "home/liu/vendored/slang-mode"
+    :load-path "/home/liu/vendored/slang-mode"
     :mode ("\\.slang\\'"))
+
 
 (add-to-list 'auto-mode-alist '("\\.xprofile\\'" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.cppm\\'" . c++-mode))
