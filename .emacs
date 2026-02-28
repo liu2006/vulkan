@@ -21,11 +21,15 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
-;; (add-to-list 'default-frame-alist
-;; 	         '(font . "CaskaydiaMonoNerdFont-19"))
+;; (set-face-attribute 'default nil
+;;                     :font "CaskaydiaMonoNerdFont"
+;;                     :height 170
+;;                     :weight 'light)
 
-(add-to-list 'default-frame-alist
-             '(font . "MonaspaceNeonNF-17"))
+(set-face-attribute 'default nil
+                    :font "Monaspace Neon NF"
+                    :height 170
+                    :weight 'light)
 
 (use-package magit
     :ensure t)
@@ -34,9 +38,9 @@
     :ensure t)
 
 (use-package gruber-darker-theme
- :ensure t
- :init
- (load-theme 'gruber-darker t))
+    :ensure t
+    :init
+    (load-theme 'gruber-darker t))
 
 (use-package smex
     :ensure t)
@@ -44,17 +48,22 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (use-package yaml-mode
-    :ensure t)
+    :ensure t
+    :mode ("\\.clang-format\\'")
+    )
 
 (use-package cmake-mode
-    :ensure t)
+    :ensure t
+    )
 
-(use-package glsl-mode
-    :ensure t)
+;; (add-to-list 'load-path "/home/liu/vendored/slang-mode")
+;; (require 'slang-mode)
 
-(add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-mode))
+(use-package slang-mode
+    :load-path "home/liu/vendored/slang-mode"
+    :mode ("\\.slang\\'"))
+
 (add-to-list 'auto-mode-alist '("\\.xprofile\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.slang\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.cppm\\'" . c++-mode))
 
 (use-package eglot
@@ -75,5 +84,7 @@
 (setq c-basic-offset 4)
 (setq cmake-tab-width 4)
 (setq lisp-body-indent 4)
+;; (setq slang-indent-offset 4)
+
 
 (put 'set-goal-column 'disabled nil)
