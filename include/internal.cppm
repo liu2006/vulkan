@@ -1,14 +1,16 @@
 module;
+#include <SDL3/SDL_vulkan.h>
+#include <iostream>
 #include <vector>
 #include <vulkan/vulkan_raii.hpp>
-#include <iostream>
-#include <SDL3/SDL_vulkan.h>
 module Application:internal;
 import :validationLayers;
 
 vk::SurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<vk::SurfaceFormatKHR> &availableFormats)
 {
-    assert(!availableFormats.empty());
+    if (availableFormats.empty()) {
+        throw std::runtime_error("Couldn't find surface format");
+    }
     auto formatIter{std::ranges::find_if(availableFormats, [](const auto &format) {
         return format.format == vk::Format::eB8G8R8A8Srgb && format.colorSpace == vk::ColorSpaceKHR::eSrgbNonlinear;
     })};
@@ -17,8 +19,10 @@ vk::SurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<vk::SurfaceFormat
 
 vk::PresentModeKHR chooseSwapPresentMode(const std::vector<vk::PresentModeKHR> &presentModes)
 {
-    assert(std::ranges::any_of(presentModes,
-                               [](const auto &presentMode) { return presentMode == vk::PresentModeKHR::eFifo; }));
+    if (std::ranges::none_of(presentModes,
+                             [](const auto &presentMode) { return presentMode == vk::PresentModeKHR::eFifo; }))
+        throw std::runtime_error("Unsupported fifo present mode");
+
     return std::ranges::any_of(presentModes,
                                [](const auto &presentMode) { return presentMode == vk::PresentModeKHR::eMailbox; })
                ? vk::PresentModeKHR::eMailbox
@@ -27,7 +31,7 @@ vk::PresentModeKHR chooseSwapPresentMode(const std::vector<vk::PresentModeKHR> &
 
 vk::Extent2D chooseSwapExtent(const vk::SurfaceCapabilitiesKHR &capabilities, SDL_Window *window)
 {
-    if (capabilities.currentExtent.width != std::numeric_limits<uint32_t>::max()) 
+    if (capabilities.currentExtent.width != std::numeric_limits<uint32_t>::max())
         return capabilities.currentExtent;
     int width{}, height{};
     SDL_GetWindowSizeInPixels(window, &width, &height);
@@ -43,7 +47,6 @@ uint32_t chooseSwapMinImageCount(const vk::SurfaceCapabilitiesKHR &capabilities)
     return minImageCount;
 }
 
-
 std::vector<const char *> getRequiredExtensions()
 {
     uint32_t sdlExtensionCount{};
@@ -58,11 +61,11 @@ VKAPI_ATTR vk::Bool32 VKAPI_CALL debugCallback(vk::DebugUtilsMessageSeverityFlag
                                                vk::DebugUtilsMessageTypeFlagsEXT type,
                                                const vk::DebugUtilsMessengerCallbackDataEXT *pCallbackData, void *)
 {
-    if (severity >= vk::DebugUtilsMessageSeverityFlagBitsEXT::eWarning) {
+    if (severity == vk::DebugUtilsMessageSeverityFlagBitsEXT::eWarning ||
+        severity == vk::DevugUtilsMessageSeverityFlagBits::eError) {
         std::cerr << std::format("validation layer type: {}, message: {}", to_string(type), pCallbackData->pMessage);
     }
     return vk::False;
 }
 
 const std::vector<const char *> requiredDeviceExtensions{vk::KHRSwapchainExtensionName};
-

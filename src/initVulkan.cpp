@@ -183,15 +183,16 @@ void Application::createSwapChain()
 
 void Application::createImageViews()
 {
+    swapChainImageViews.clear();
     vk::ImageViewCreateInfo imageViewCreateInfo;
-    imageViewCreateInfo.viewType = vk::ViewtypeFlatBits::e2D;
+    imageViewCreateInfo.viewType = vk::ImageViewType::e2D;
     imageViewCreateInfo.format = swapChainSurfaceFormat.format;
     imageViewCreateInfo.subresourceRange = {vk::ImageAspectFlagBits::eColor, 0, 1, 0, 1};
 
-    for (const auto &image : swapChainImages) {
+    for (auto &image : swapChainImages) {
         imageViewCreateInfo.image = image;
         vk::raii::ImageView imageView{device, imageViewCreateInfo};
         swapChainImageViews.push_back(std::move(imageView));
     }
-    
 }
+
