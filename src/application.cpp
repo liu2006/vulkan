@@ -1,3 +1,4 @@
+
 module;
 #include <memory>
 #include <SDL3/SDL.h>
@@ -37,7 +38,9 @@ void Application::initVulkan()
     createLogicDevice();
     createSwapChain();
     createImageViews();
+    createGraphicsPipeline();
 }
+
 void Application::mainLoop()
 {
     SDL_ShowWindow(window.get());

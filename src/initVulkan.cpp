@@ -196,3 +196,22 @@ void Application::createImageViews()
     }
 }
 
+void Application::createGraphicsPipeline()
+{
+    auto shaderCode{readFile("../shaders/slang.spv")};
+    vk::raii::ShaderModule shaderModule{createShaderModule(shaderCode, device)};
+    
+    vk::PipelineShaderStageCreateInfo vertShaderInfo;
+    vertShaderInfo.stage = vk::ShaderStageFlagBits::eVertex;
+    vertShaderInfo.module = shaderModule;
+    vertShaderInfo.pName = "vertMain";
+
+    vk::PipelineShaderStageCreateInfo fragShaderInfo;
+    fragShaderInfo.stage = vk::ShaderStageFlagBits::eFragment;
+    fragShaderInfo.module = shaderModule;
+    fragShaderInfo.pName = "fragMain";
+
+    std::vector<vk::PipelineShaderStageCreateInfo> shaderStages{vertShaderInfo, fragShaderInfo};
+}
+
+

@@ -1,10 +1,34 @@
 module;
+#include <fstream>
 #include <SDL3/SDL_vulkan.h>
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 #include <vulkan/vulkan_raii.hpp>
 module Application:internal;
 import :validationLayers;
+
+std::vector<char> readFile(const std::string &filename)
+{
+    std::ifstream file(filename, std::ios::ate | std::ios::binary);
+    if (!file.is_open())
+        throw std::runtime_error("Couldn't open shader file");
+    std::vector<char> buffer(file.tellg());
+    file.seekg(0, std::ios::beg);
+    file.read(buffer.data(), static_cast<std::streamsize>(buffer.size()));
+    file.close();
+    return buffer;
+}
+
+[[nodiscard]]
+vk::raii::ShaderModule createShaderModule(const std::vector<char> &code, vk::raii::Device &device)
+{
+    vk::ShaderModuleCreateInfo shaderModuleCreateInfo;
+    shaderModuleCreateInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
+    shaderModuleCreateInfo.codeSize = code.size() * sizeof(char);
+    vk::raii::ShaderModule shaderModule{device, shaderModuleCreateInfo};
+    return shaderModule;
+}
 
 vk::SurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<vk::SurfaceFormatKHR> &availableFormats)
 {
@@ -62,7 +86,7 @@ VKAPI_ATTR vk::Bool32 VKAPI_CALL debugCallback(vk::DebugUtilsMessageSeverityFlag
                                                const vk::DebugUtilsMessengerCallbackDataEXT *pCallbackData, void *)
 {
     if (severity == vk::DebugUtilsMessageSeverityFlagBitsEXT::eWarning ||
-        severity == vk::DevugUtilsMessageSeverityFlagBits::eError) {
+        severity == vk::DebugUtilsMessageSeverityFlagBitsEXT::eError) {
         std::cerr << std::format("validation layer type: {}, message: {}", to_string(type), pCallbackData->pMessage);
     }
     return vk::False;

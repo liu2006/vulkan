@@ -17,7 +17,7 @@ private:
         ~SDLGuard()
         {
             SDL_Quit();
-            std::cout << "Destroyed SDL";
+            std::cout << "Destroyed SDL\n";
         }
     };
     SDLGuard sdlGuard;
@@ -51,6 +51,7 @@ private:
     void createLogicDevice();
     void createSwapChain();
     void createImageViews();
+    void createGraphicsPipeline();
     
 public:
     ~Application();

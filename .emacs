@@ -1,3 +1,4 @@
+(put 'set-goal-column 'disabled nil)
 (setq backup-directory-alist
       `(("." . "~/.emacs_backups")))
 
@@ -85,7 +86,3 @@
 (setq c-basic-offset 4)
 (setq cmake-tab-width 4)
 (setq lisp-body-indent 4)
-;; (setq slang-indent-offset 4)
-
-
-(put 'set-goal-column 'disabled nil)
