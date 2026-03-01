@@ -11,23 +11,23 @@ target_sources(${PROJECT_NAME} PRIVATE src/main.cpp)
 add_library(lib SHARED)
 target_sources(lib
     PRIVATE
-    src/application.cpp
-    src/initVulkan.cpp
+    implement/appImplement.cpp
+    implement/initVulkan.cpp
 
     PUBLIC
     FILE_SET CXX_MODULES
     
     FILES
-    modules/application.cpp
-    modules/internal.cpp
-    modules/validationLayers.cpp
+    interface/appInterface.cpp
+    interface/appUtils.cpp
 )
+
 list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/sdl3") 
 list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/1.4.341.0/x86_64") 
 find_package(SDL3 CONFIG REQUIRED)
 find_package(Vulkan REQUIRED)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${SDL3_INCLUDE_DIRS} ${Vulkan_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PUBLIC ${SDL3_INCLUDE_DIRS} ${Vulkan_INCLUDE_DIRS})
 target_link_libraries(lib PUBLIC SDL3::SDL3 Vulkan::Vulkan)
 target_link_libraries(${PROJECT_NAME} PRIVATE lib)
 
@@ -36,5 +36,4 @@ install(TARGETS ${PROJECT_NAME} lib
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
 )
-
 

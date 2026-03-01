@@ -1,4 +1,3 @@
-
 module;
 #include <memory>
 #include <SDL3/SDL.h>

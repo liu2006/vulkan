@@ -5,8 +5,18 @@ module;
 #include <vector>
 #include <fstream>
 #include <SDL3/SDL.h>
-module app:internal;
-import :validationLayers;
+module app:appUtils;
+
+const std::vector<const char *> requiredDeviceExtensions{vk::KHRSwapchainExtensionName};
+const std::vector<const char *> validationLayers{"VK_LAYER_KHRONOS_validation"};
+constexpr bool enableValidationLayers
+{
+#ifdef NDEBUG
+    false
+#else
+    true
+#endif
+};
 
 std::vector<char> readFile(const std::string &filename)
 {
@@ -92,4 +102,3 @@ VKAPI_ATTR vk::Bool32 VKAPI_CALL debugCallback(vk::DebugUtilsMessageSeverityFlag
     return vk::False;
 }
 
-const std::vector<const char *> requiredDeviceExtensions{vk::KHRSwapchainExtensionName};

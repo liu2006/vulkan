@@ -36,6 +36,7 @@ private:
     vk::raii::SwapchainKHR swapChain{nullptr};
     std::vector<vk::Image> swapChainImages{};
     std::vector<vk::raii::ImageView> swapChainImageViews{};
+    vk::raii::PipelineLayout pipelineLayout{nullptr};
     
     vk::SurfaceFormatKHR swapChainSurfaceFormat;
     vk::Extent2D swapChainExtent;
