@@ -8,7 +8,7 @@ module;
 #include <stdexcept>
 #include <vector>
 #include <vulkan/vulkan_raii.hpp>
-module Application;
+module app;
 import :internal;
 
 void Application::createInstance()

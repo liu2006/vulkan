@@ -5,7 +5,7 @@ module;
 #include <SDL3/SDL_vulkan.h>
 #include <cstdint>
 #include <iostream>
-module Application;
+module app;
 
 Application::Application(uint32_t width, uint32_t height, const char *title)
     : width{width}, height{height}, title{title}

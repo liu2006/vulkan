@@ -17,13 +17,10 @@ target_sources(lib
     PUBLIC
     FILE_SET CXX_MODULES
     
-    BASE_DIRS
-    include
-
     FILES
-    include/application.cppm
-    include/internal.cppm
-    include/validationLayers.cppm
+    modules/application.cpp
+    modules/internal.cpp
+    modules/validationLayers.cpp
 )
 list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/sdl3") 
 list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/vendored/1.4.341.0/x86_64") 

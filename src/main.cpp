@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <SDL3/SDL.h>
-import Application;
+import app;
 
 int main()
 {
